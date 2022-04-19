@@ -1,0 +1,13 @@
+.img{
+    width: 960px;
+    height: 275px;
+    border: 1px solid #555;;
+}
+.images{
+    width: 180px;
+    height: 200px;
+    border: 1px solid #555;
+}
+a{
+    text-decoration: none;
+}
