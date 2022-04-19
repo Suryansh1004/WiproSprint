@@ -1,0 +1,28 @@
+.container{
+    border: 1px solid black;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.img{
+    width: 240;
+    height: 150px; 
+}
+.images{
+    width: 210px;
+    height: 160px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+.pp{
+   font-size: 18pt;
+   font-family: "Monotype Corsiva";
+}
+.footer
+{
+    text-align: center;
+    display: flex;
+justify-content: center;
+    background-color: rgb(13, 13, 198);
+    height: 50px;
+
+} 
