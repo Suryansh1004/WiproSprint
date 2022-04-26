@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Assignment</title>
+	<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	<style>
+	section {
+		margin: 2em;
+	}
+
+	form {
+		margin: 2em;
+	}
+</style>
+</head>
+<body>
+	<section class="card">
+		<div class="card-header d-flex flex-row">
+			<h4 class="col">Issues Summary</h4>
+			<button type="button" class="btn btn-primary">Open</button>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th>total</th>
+					<th>open</th>
+					<th>my_issues</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>sagar.patke/bootstrap-assignment</th>
+					<td>5</td>
+					<td>2</td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<th>sagar.patke/javascript-assignment</th>
+					<td>6</td>
+					<td>3</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<th>sagar.patke/angular-assignment</th>
+					<td>4</td>
+					<td>1</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<th>sagar.patke/java-assignment</th>
+					<td>7</td>
+					<td>4</td>
+					<td>3</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section class="card">
+		<h4 class="card-header">Explore</h4>
+		<form>
+			<div class="form-group">
+				<label for="countQueryRepositoryInput">Repository</label>
+				<input type="text" class="form-control" id="countQueryRepositoryInput" placeholder="Type repository name here">
+			</div>
+			<div class="form-group">
+				<label for="countQueryIssueType">Count</label>
+				<input type="text" class="form-control" id="countQueryIssueType" placeholder="Type count type (total / open / my_issues)">
+			</div>
+			<input type="submit" value="Go!" class="btn btn-primary">
+			<span id="count"></span>
+		</form>
+	</section>
+	<script>
+		function getIssueCount(assignmentName, countType) {
+		    // Extracting the row for assignmentName
+		    const trCollection = document.getElementsByTagName('tr');
+
+		    const trArray = Array.from(trCollection);
+
+		    const row = trArray.filter(function(item) {
+		        return item.getElementsByTagName('th')[0].innerHTML === assignmentName;
+		    })[0];
+
+		    // Getting the index of countType in table
+		    const thead = document.getElementsByTagName('thead')[0];
+		    const thArray = Array.from(thead.getElementsByTagName('th'));
+
+		    const th = thArray.filter(function(item) {
+		        return item.innerText === countType;
+		    })[0];
+
+		    const index = thArray.indexOf(th);
+
+		    // Getting the innerText of index column in row
+		    const tdCollection = row.getElementsByTagName('td');
+		    const answer = tdCollection[index - 1].innerText;
+
+		    return answer;
+		}
+
+		function handleFormSubmit(event) {
+			event.preventDefault();
+
+			const repositoryName = document.getElementById('countQueryRepositoryInput').value;
+			const countType = document.getElementById('countQueryIssueType').value;
+
+			const number = getIssueCount(repositoryName, countType);
+
+			const countDiv = document.getElementById('count');
+
+			countDiv.innerHTML = `<strong>${number}</strong>`
+		}
+	</script>
+	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
