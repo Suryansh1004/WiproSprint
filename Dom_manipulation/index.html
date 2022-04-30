@@ -1,124 +1,319 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>JavaScript Assignment</title>
-	<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	
-	<style>
-	section {
-		margin: 2em;
-	}
+  <head>
+    <title>JavaScript Assignment</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="/node_modules/jquery/dist/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      section {
+        margin: 2em;
+      }
 
-	form {
-		margin: 2em;
-	}
-</style>
-</head>
-<body>
-	<section class="card">
-		<div class="card-header d-flex flex-row">
-			<h4 class="col">Issues Summary</h4>
-			<button type="button" class="btn btn-primary">Open</button>
-		</div>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th></th>
-					<th>total</th>
-					<th>open</th>
-					<th>my_issues</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>sagar.patke/bootstrap-assignment</th>
-					<td>5</td>
-					<td>2</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<th>sagar.patke/javascript-assignment</th>
-					<td>6</td>
-					<td>3</td>
-					<td>1</td>
-				</tr>
-				<tr>
-					<th>sagar.patke/angular-assignment</th>
-					<td>4</td>
-					<td>1</td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<th>sagar.patke/java-assignment</th>
-					<td>7</td>
-					<td>4</td>
-					<td>3</td>
-				</tr>
-			</tbody>
-		</table>
-	</section>
-	<section class="card">
-		<h4 class="card-header">Explore</h4>
-		<form>
-			<div class="form-group">
-				<label for="countQueryRepositoryInput">Repository</label>
-				<input type="text" class="form-control" id="countQueryRepositoryInput" placeholder="Type repository name here">
-			</div>
-			<div class="form-group">
-				<label for="countQueryIssueType">Count</label>
-				<input type="text" class="form-control" id="countQueryIssueType" placeholder="Type count type (total / open / my_issues)">
-			</div>
-			<input type="submit" value="Go!" class="btn btn-primary">
-			<span id="count"></span>
-		</form>
-	</section>
-	<script>
-		function getIssueCount(assignmentName, countType) {
-		    // Extracting the row for assignmentName
-		    const trCollection = document.getElementsByTagName('tr');
+      form {
+        margin: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card">
+      <div class="card-header d-flex flex-row">
+        <h4 class="col">Issues Summary</h4>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Create Isuue
+        </button>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Create Issue Form
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- body -->
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Repository:</label
+                  >
+                  <select id="issue" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option selected>Suryansh1004/Blockchain</option>
+                  <option value="1">Suryansh1004/Suryansh1004</option>
+                  <option value="2">Suryansh1004/WiproSprint</option>
+                  <option value="3">Suryansh1004/Dark-mode-ext </option>
+                </select> 
+                  <!-- <input type="text" class="form-control" id="recipient-name" /> -->
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Title:</label
+                  >
+                  <input type="text" class="form-control" id="recipient-name" />
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label"
+                    >Description:</label
+                  >
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <!-- end body -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Create Issue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Total</th>
+            <th>Open</th>
+            <th>My_Issues</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th id="one"></th>
+            <td id="1t_issue"></td>
+            <td id="1open"></td>
+            <td id="1my_issue"></td>
+          </tr>
+          <tr>
+            <th id="two"></th>
+            <td id="2t_issue"></td>
+            <td id="2open"></td>
+            <td id="2my_issue"></td>
+          </tr>
+          <tr>
+            <th id="three"></th>
+            <td id="3t_issue"></td>
+            <td id="3open"></td>
+            <td id="3my_issue"></td>
+          </tr>
+          <tr>
+            <th id="four"></th>
+            <td id="4t_issue"></td>
+            <td id="4open"></td>
+            <td id="4my_issue"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- count query -->
+    <section class="card">
+      <h4 class="card-header">Explore</h4>
+      <form>
+        <div class="form-group">
+          <label for="countQueryRepositoryInput">Repository</label> <br>
+          <select id="M_Repo" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+          <option id="Select_Repo" selected>Suryansh1004/Blockchain</option>
+          <option value="1">Suryansh1004/Suryansh1004</option>
+          <option value="2">Suryansh1004/WiproSprint</option>
+          <option value="3">Suryansh1004/Dark-mode-ext </option>
+        </select> 
+        <div class="form-group">
+          <label for="countQueryIssueType">Count</label> <br>
+          <select id="count" class="form-select" aria-label="Default select example">
+          <option selected>Select Count</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
 
-		    const trArray = Array.from(trCollection);
+        </select>
+        <br> <br>
+        <button type="button" class="btn btn-success">Go</button>
 
-		    const row = trArray.filter(function(item) {
-		        return item.getElementsByTagName('th')[0].innerHTML === assignmentName;
-		    })[0];
+        </div>
+        <!--  popups-->
+        
+      <!-- ends -->
+        <!-- <input type="submit" value="Go!" class="btn btn-primary" />
+        <span id="count"></span> -->
+      </form>
+    </section>
+    <script>
+      window.onload = function () {
+        // const n = document.getElementById('username').value;
+        // 1st
+        // let l = document.getElementById("Repo").value;
+         
+        fetch('https://api.github.com/repos/Suryansh1004/Blockchain').then(
+          (response) =>
+            response.json().then((data) => {
+              console.log(data);
+              document.getElementById('one').innerHTML = data.full_name;
+              document.getElementById('1t_issue').innerHTML =
+                data.open_issues_count;
+              document.getElementById('1open').innerHTML = data.open_issues;
+              document.getElementById('1my_issue').innerHTML = data.open_issues;
+            })
+        );
+        // 2nd
+        fetch('https://api.github.com/repos/Suryansh1004/Suryansh1004').then(
+          (response) =>
+            response.json().then((data) => {
+              console.log(data);
+              document.getElementById('two').innerHTML = data.full_name;
+              document.getElementById('2t_issue').innerHTML =
+                data.open_issues_count;
+              document.getElementById('2open').innerHTML = data.open_issues;
+              document.getElementById('2my_issue').innerHTML = data.open_issues;
+            })
+        );
+        // 3rd
+        fetch('https://api.github.com/repos/Suryansh1004/WiproSprint').then(
+          (response) =>
+            response.json().then((data) => {
+              console.log(data);
+              document.getElementById('three').innerHTML = data.full_name;
+              document.getElementById('3t_issue').innerHTML =
+                data.open_issues_count;
+              document.getElementById('3open').innerHTML = data.open_issues;
+              document.getElementById('3my_issue').innerHTML = data.open_issues;
+            })
+        );
 
-		    // Getting the index of countType in table
-		    const thead = document.getElementsByTagName('thead')[0];
-		    const thArray = Array.from(thead.getElementsByTagName('th'));
+        // 4th
+        fetch('https://api.github.com/repos/Suryansh1004/Dark-mode-ext').then(
+          (response) =>
+            response.json().then((data) => {
+              console.log(data);
+              document.getElementById('four').innerHTML = data.full_name;
+              document.getElementById('4t_issue').innerHTML =
+                data.open_issues_count;
+              document.getElementById('4open').innerHTML = data.open_issues;
+              document.getElementById('4my_issue').innerHTML = data.open_issues;
+            })
+        );
+      };
+// end of js working
+// js fetch api to create an issue
 
-		    const th = thArray.filter(function(item) {
-		        return item.innerText === countType;
-		    })[0];
+// const fetch = require('node-fetch');
+// const user = 'Suryansh1004';
+// const re = document.getElementById('issue').value;
+// createIssue = function() {
+//   (issue => {
+//     fetch('https://api.github.com/repos/${user}/${re}/issues',{
+//       method: 'post',
+//       body: 'JSON.stringify(issue)',
+//       headers: {'Content-Type': 'application/json', 'Authorization': ${process.env.TOKEN}}
+//     })
+//   })
 
-		    const index = thArray.indexOf(th);
+// }
 
-		    // Getting the innerText of index column in row
-		    const tdCollection = row.getElementsByTagName('td');
-		    const answer = tdCollection[index - 1].innerText;
 
-		    return answer;
-		}
+// end fetch
 
-		function handleFormSubmit(event) {
-			event.preventDefault();
+// prewritten
+      function getIssueCount(assignmentName, countType) {
+        // Extracting the row for assignmentName
+        const trCollection = document.getElementsByTagName('tr');
 
-			const repositoryName = document.getElementById('countQueryRepositoryInput').value;
-			const countType = document.getElementById('countQueryIssueType').value;
+        const trArray = Array.from(trCollection);
 
-			const number = getIssueCount(repositoryName, countType);
+        const row = trArray.filter(function (item) {
+          return (
+            item.getElementsByTagName('th')[0].innerHTML === assignmentName
+          );
+        })[0];
 
-			const countDiv = document.getElementById('count');
+        // Getting the index of countType in table
+        const thead = document.getElementsByTagName('thead')[0];
+        const thArray = Array.from(thead.getElementsByTagName('th'));
 
-			countDiv.innerHTML = `<strong>${number}</strong>`
-		}
-	</script>
-	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        const th = thArray.filter(function (item) {
+          return item.innerText === countType;
+        })[0];
 
-</body>
+        const index = thArray.indexOf(th);
+
+        // Getting the innerText of index column in row
+        const tdCollection = row.getElementsByTagName('td');
+        const answer = tdCollection[index - 1].innerText;
+
+        return answer;
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const repositoryName = document.getElementById(
+          'countQueryRepositoryInput'
+        ).value;
+        const countType = document.getElementById('countQueryIssueType').value;
+
+        const number = getIssueCount(repositoryName, countType);
+
+        const countDiv = document.getElementById('count');
+
+        countDiv.innerHTML = `<strong>${number}</strong>`;
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="/node_modules/jquery/dist/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
+  </body>
 </html>
