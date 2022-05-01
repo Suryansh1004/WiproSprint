@@ -1,0 +1,106 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Spider Man",
+      "posterPath": "./images/spiderman.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Thor The Dark World",
+      "posterPath": "./images/Thor_The_Dark_World.jpg"
+    },
+    {
+      "id": 3,
+      "title": "TheAvengers2012",
+      "posterPath": "./images/TheAvengers2012.jpg"
+    },
+    {
+      "id": 4,
+      "title": "The Incredible Hulk",
+      "posterPath": "./images/The_Incredible_Hulk.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Iron Man3",
+      "posterPath": "./images/ironman3.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Iron Man2",
+      "posterPath": "./images/ironman2.png"
+    },
+    {
+      "id": 7,
+      "title": "Iron Man",
+      "posterPath": "./images/ironman.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Super 8",
+      "posterPath": "./images/super 8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Captain_America Civil War",
+      "posterPath": "./images/Captain_America_Civil_War.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Harry Potter",
+      "posterPath": "./images/harrypotter.jpg"
+    }
+  ],
+  "favourites": [
+    {
+      "id": 1,
+      "title": "Spider Man",
+      "posterPath": "./images/spiderman.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Thor The Dark World",
+      "posterPath": "./images/Thor_The_Dark_World.jpg"
+    },
+    {
+      "id": 3,
+      "title": "TheAvengers2012",
+      "posterPath": "./images/TheAvengers2012.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Iron Man3",
+      "posterPath": "./images/ironman3.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Iron Man2",
+      "posterPath": "./images/ironman2.png"
+    },
+    {
+      "id": 7,
+      "title": "Iron Man",
+      "posterPath": "./images/ironman.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Harry Potter",
+      "posterPath": "./images/harrypotter.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Captain_America Civil War",
+      "posterPath": "./images/Captain_America_Civil_War.jpg"
+    },
+    {
+      "id": 4,
+      "title": "The Incredible Hulk",
+      "posterPath": "./images/The_Incredible_Hulk.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Super 8",
+      "posterPath": "./images/super 8.jpg"
+    }
+  ]
+}
