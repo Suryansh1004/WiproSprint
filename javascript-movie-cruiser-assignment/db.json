@@ -2,40 +2,40 @@
   "movies": [
     {
       "id": 1,
-      "title": "F2",
-      "posterPath": "../images/F2.jfif",
+      "title": "Doctor Strange",
+      "posterPath": "../images/F2.jpg",
       "favourite": false
     },
     {
       "id": 2,
-      "title": "Sankranti",
-      "posterPath": "../images/sankranti.jfif",
+      "title": "THOR",
+      "posterPath": "../images/thor.jpg",
       "favourite": true
     },
     {
       "id": 3,
-      "title": "Hello",
-      "posterPath": "../images/Hello.jfif",
+      "title": "Ant MAN",
+      "posterPath": "../images/Hello.jpg",
       "favourite": true
     }
   ],
   "favourites": [
     {
       "id": 1,
-      "title": "F2",
-      "posterPath": "../images/F2.jfif",
+      "title": "Doctor Strange",
+      "posterPath": "../images/F2.jpg",
       "favourite": false
     },
     {
       "id": 2,
-      "title": "Sankranti",
-      "posterPath": "../images/sankranti.jfif",
+      "title": "THOR",
+      "posterPath": "../images/thor.jpg",
       "favourite": true
     },
     {
       "id": 3,
-      "title": "Hello",
-      "posterPath": "../images/Hello.jfif",
+      "title": "Ant Man",
+      "posterPath": "../images/Hello.jpg",
       "favourite": true
     }
   ]
