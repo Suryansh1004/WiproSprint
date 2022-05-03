@@ -1,0 +1,16 @@
+{
+  "name": "testingdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Dhiraj",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2",
+    "node-fetch": "^2.6.1"
+  }
+}
